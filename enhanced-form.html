@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Assignments on enhanced form HTML</title>
+</head>
+<body>
+  <header>
+    <h1>I will be applyin gwhat i learnt in Web Dev class</h1>
+    <p>This page demonstrates semantic layout, lists, tables, media and a fully validated HTML5 form. Fields use placeholder, required, autocomplete, and readonly where appropriate.</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>Overview</h2>
+      <ul>
+        <li><a href="#form">Go to the form</a></li>
+        <li><a href="#plans">Compare plans (table)</a></li>
+        <li><a href="#media">Media examples</a></li>
+      </ul>
+
+      <!--Table-->
+      <h3 id="plans">Sample Plans</h3>
+      <table >
+        <thead>
+          <tr>
+            <th>Plan</th>
+            <th>Monthly</th>
+            <th>Transactions</th>
+            <th>Support</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Starter</td>
+            <td>$9</td>
+            <td>Up to 100</td>
+            <td>Email</td>
+          </tr>
+          <tr>
+            <td>Business</td>
+            <td>$29</td>
+            <td>Up to 1,000</td>
+            <td>Phone & Email</td>
+          </tr>
+          <tr>
+            <td>Enterprise</td>
+            <td>Custom</td>
+            <td>Unlimited</td>
+            <td>Dedicated Manager</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!--lists-->
+      <h3>Key Benefits</h3>
+      <ol>
+        <li>Fast onboarding with guided forms.</li>
+        <li>Secure payments and transaction reporting.</li>
+        <li>24/7 monitored support on higher tiers.</li>
+      </ol>
+
+      <ul>
+        <li>Easy integration with existing systems.</li>
+        <li>Customizable plans to fit your needs.</li>
+        <li>Scalable solutions for growing businesses.</li>
+      </ul>
+
+        <dl>
+            <dt>Starter Plan</dt>
+            <dd>Best for small businesses starting out.</dd>
+            <dt>Business Plan</dt>
+            <dd>Ideal for growing companies needing more features.</dd>
+            <dt>Enterprise Plan</dt>
+            <dd>Custom solutions for large organizations with specific needs.</dd>
+        </dl>
+    </section>
+    
+    <!-- Media section -->
+    <section id="media">
+      <h2>Media examples</h2>
+
+      <figure>
+        <img src="https://via.placeholder.com/640x320.png?text=Company+Banner" alt="Decorative company banner">
+        <figcaption>Decorative banner (placeholder image)</figcaption>
+      </figure>
+
+      <audio controls>
+            <source src="https://www.w3schools.com/html/horse.ogg" type="audio/ogg">
+            <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+            Your browser does not support HTML5 audio.
+      </audio>
+
+      <video controls width="360">
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+      </video>
+
+    </section>
+     
+    <!-- Form section -->
+    <section id="form">
+      <h2>Sign-up & Feedback Form</h2>
+      <form action="#" method="post" enctype="multipart/form-data" autocomplete="on">
+        <fieldset>
+          <legend>Account details</legend>
+          <label>Company name *
+            <input type="text" name="company" placeholder="Acme Ltd" required autocomplete="organization">
+          </label>
+          <label>Reference ID
+            <input type="text" value="REF-20250809-001" readonly>
+          </label>
+          <label>Email address *
+            <input type="email" name="email" placeholder="name@domain.com" required autocomplete="email">
+          </label>
+          <label>Phone number
+            <input type="tel" name="phone" placeholder="+254712345678" pattern="\+?[0-9]{7,15}" autocomplete="tel">
+          </label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Login & security</legend>
+          <label>Username *
+            <input type="text" name="username" placeholder="choose a username" required minlength="4" maxlength="30" autocomplete="username">
+          </label>
+          <label>Password *
+            <input type="password" name="password" placeholder="At least 8 characters" required minlength="8" pattern="(?=^.{8,}$)(?=.*\d)(?=.*[a-zA-Z]).*" autocomplete="new-password">
+          </label>
+          <label>Website
+            <input type="url" name="website" placeholder="https://example.com" autocomplete="url">
+          </label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Preferences & profile</legend>
+          <label>Brand color
+            <input type="color" name="color" value="#0b6">
+          </label>
+          <label>Date of founding
+            <input type="date" name="founding_date">
+          </label>
+          <label>Employees
+            <input type="number" name="employees" min="1" max="100000" step="1" placeholder="42">
+          </label>
+          <label>Preferred contact method *
+            <input type="radio" name="contact" value="email" required> Email
+            <input type="radio" name="contact" value="phone"> Phone
+            <input type="radio" name="contact" value="none"> None
+          </label>
+          <label>Choose a plan *
+            <select name="plan" required>
+              <option value="">-- Select --</option>
+              <option value="starter">Starter</option>
+              <option value="business">Business</option>
+              <option value="enterprise">Enterprise</option>
+            </select>
+          </label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Files, feedback & consent</legend>
+          <label>Upload brand logo (image) *
+            <input type="file" name="logo" accept="image/*" required>
+          </label>
+          <label>Recommendation rating (0–10)
+            <input type="range" name="rating" min="0" max="10" step="1" value="8">
+          </label>
+          <label>Comments
+            <textarea name="comments" placeholder="Tell us about your experience" maxlength="1000"></textarea>
+          </label>
+          <label>
+            <input type="checkbox" name="newsletter" value="yes"> Subscribe to product updates
+          </label>
+          <label>Simple math verification *
+            <input type="text" name="captcha" placeholder="What is 3 + 4?" required pattern="7">
+          </label>
+          <label>Industry
+            <input name="industry" list="industries" placeholder="e.g. Technology">
+            <datalist id="industries">
+              <option value="Technology">
+              <option value="Finance">
+              <option value="Healthcare">
+              <option value="Education">
+              <option value="Retail">
+            </datalist>
+          </label>
+        </fieldset>
+
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>Built with semantic HTML5 — labels, fieldsets, legends, and accessible attributes.</p>
+  </footer>
+</body>
+</html>
